@@ -1,9 +1,10 @@
 {
   "name": "create-node-restapi",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "bin": {
     "create-node-restapi": "index.js"
   },
+  "type": "module",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,5 +15,14 @@
   },
   "license": "MIT",
   "author": "",
-  "homepage": "https://github.com/Michal3333/create-node-restapi"
+  "homepage": "https://github.com/Michal3333/create-node-restapi",
+  "dependencies": {
+    "chalk": "^5.1.2"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "template",
+    "node.js"
+  ]
 }
