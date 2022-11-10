@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-import { logSuccess, logError } from './utils/logger.js';
+import { logSuccess, logTitle } from './utils/logger.js';
 import runCommand, {handleError} from './utils/commandRunner.js';
 
 const repoUrl = 'https://github.com/Michal3333/rest-express-template';
@@ -18,8 +18,8 @@ const installCommand = `cd ${projectDirectory} && npm install`;
 const createEnvCommand = `cd ${projectDirectory} && cp .env.sample .env`;
 
 
-runCommand(gitCloneCommand, 'Repo cloned successfully!');
-runCommand(installCommand, 'Dependencies installed successfully!');
-runCommand(createEnvCommand, '.env file created successfully!');
+runCommand(gitCloneCommand, '[1/3] Repo cloned successfully!');
+runCommand(installCommand, '[2/3] Dependencies installed successfully!');
+runCommand(createEnvCommand, '[3/3] .env file created successfully!');
 
-logSuccess('The project was successfully created!');
+logTitle('The project was successfully created!');
