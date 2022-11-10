@@ -4,6 +4,7 @@
   "bin": {
     "create-node-restapi": "index.js"
   },
+  "type": "module",
   "main": "index.js",
   "repository": {
     "type": "git",
