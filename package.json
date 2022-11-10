@@ -14,5 +14,8 @@
   },
   "license": "MIT",
   "author": "",
-  "homepage": "https://github.com/Michal3333/create-node-restapi"
+  "homepage": "https://github.com/Michal3333/create-node-restapi",
+  "dependencies": {
+    "chalk": "^5.1.2"
+  }
 }
