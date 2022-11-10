@@ -1,4 +1,4 @@
-# create-node-restapi
+# create-node-restapi [![npm version](https://badge.fury.io/js/create-node-restapi.svg)](https://badge.fury.io/js/create-node-restapi)
 A CLI that clones the [rest-express-template](https://github.com/Michal3333/rest-express-template) repository, installs required dependencies and inits .env file.
 
 ## How to use it?
