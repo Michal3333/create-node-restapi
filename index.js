@@ -14,12 +14,14 @@ if(projectDirectory.match(/[<>:"\/\\|?*\x00-\x1F]/)) {
 }
 
 const gitCloneCommand = `git clone --depth 1 ${repoUrl} ${projectDirectory}`;
+const deleteRemoteGitCommand = `cd ${projectDirectory} && rm -rf .git`;
 const installCommand = `cd ${projectDirectory} && npm install`;
 const createEnvCommand = `cd ${projectDirectory} && cp .env.sample .env`;
 
 
-runCommand(gitCloneCommand, '[1/3] Repo cloned successfully!');
-runCommand(installCommand, '[2/3] Dependencies installed successfully!');
-runCommand(createEnvCommand, '[3/3] .env file created successfully!');
+runCommand(gitCloneCommand, '[1/4] Repo cloned successfully!');
+runCommand(deleteRemoteGitCommand, '[2/4] .git folder removed successfully!');
+runCommand(installCommand, '[3/4] Dependencies installed successfully!');
+runCommand(createEnvCommand, '[4/4] .env file created successfully!');
 
 logTitle('The project was successfully created!');
