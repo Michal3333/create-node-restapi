@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 import inquirer from 'inquirer';
-import { logSuccess, logTitle } from './utils/logger.js';
+import { logTitle } from './utils/logger.js';
 import runCommand, { handleError } from './utils/commandRunner.js';
 
 const completeValue = 'complete';
@@ -37,7 +37,7 @@ const repoUrl = 'https://github.com/Michal3333/rest-express-template';
     handleError('The project directory was not specified.');
   }
 
-  if (projectDirectory.match(/[<>:"\/\\|?*\x00-\x1F]/)) {
+  if (projectDirectory.match(/[<>:"/\\|?*\x00-\x1F]/)) {
     handleError('The project name is invalid.');
   }
 

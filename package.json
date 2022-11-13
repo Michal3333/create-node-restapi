@@ -11,7 +11,7 @@
     "url": "https://github.com/Michal3333/create-node-restapi"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --fix utils .eslintrc.cjs index.js"
   },
   "license": "MIT",
   "author": "",
@@ -25,5 +25,10 @@
     "api",
     "template",
     "node.js"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }
