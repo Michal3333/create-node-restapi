@@ -48,15 +48,15 @@ const repoUrl = 'https://github.com/Michal3333/rest-express-template';
   const deleteStarterIndexCommand = `cd ${projectDirectory} && rm index.starter.txt`;
   const createExpressStarterCommand = `cd ${projectDirectory} && rm -rf src/*  && cp index.starter.txt src/index.ts && rm index.starter.txt`;
 
-  runCommand(gitCloneCommand, '[1/4] Repo cloned successfully!');
-  runCommand(deleteRemoteGitCommand, '[2/4] .git folder removed successfully!');
-  runCommand(installCommand, '[3/4] Dependencies installed successfully!');
-  runCommand(createEnvCommand, '[4/4] .env file created successfully!');
+  runCommand(gitCloneCommand, '[1/5] Repo cloned successfully!');
+  runCommand(deleteRemoteGitCommand, '[2/5] .git folder removed successfully!');
+  runCommand(installCommand, '[3/5] Dependencies installed successfully!');
+  runCommand(createEnvCommand, '[4/5] .env file created successfully!');
 
   if (projctType === completeValue) {
-    runCommand(deleteStarterIndexCommand, '[4/4] index.starter.ts file removed successfully!');
+    runCommand(deleteStarterIndexCommand, '[5/5] index.starter.ts file removed successfully!');
   } else {
-    runCommand(createExpressStarterCommand, '[4/4] express starter setup created successfully!');
+    runCommand(createExpressStarterCommand, '[5/5] Minimal express setup created successfully!');
   }
 
   logTitle('The project was successfully created!');
