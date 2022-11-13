@@ -59,5 +59,5 @@ const repoUrl = 'https://github.com/Michal3333/rest-express-template';
     runCommand(createExpressStarterCommand, '[5/5] Minimal express setup created successfully!');
   }
 
-  logTitle('The project was successfully created!');
+  logTitle(`The project was successfully created in ${projectDirectory} directory!`);
 })();
