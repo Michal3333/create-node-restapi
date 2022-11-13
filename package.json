@@ -17,7 +17,8 @@
   "author": "",
   "homepage": "https://github.com/Michal3333/create-node-restapi",
   "dependencies": {
-    "chalk": "^5.1.2"
+    "chalk": "^5.1.2",
+    "inquirer": "^9.1.4"
   },
   "keywords": [
     "rest",
