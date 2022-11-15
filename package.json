@@ -1,6 +1,6 @@
 {
   "name": "create-node-restapi",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "bin": {
     "create-node-restapi": "index.js"
   },
