@@ -41,12 +41,20 @@ const repoUrl = 'https://github.com/Michal3333/rest-express-template';
     handleError('The project name is invalid.');
   }
 
+  const windows = /^win/.test(process.platform);
+
+  const deleteFolderPhrase = windows ? 'rd /s /q' : 'rm -rf';
+  const deleteFilePhrase = windows ? 'del /q' : 'rm';
+  const npmPhrase = windows ? 'npm.cmd' : 'npm';
+  const copyPhrase = windows ? 'copy' : 'cp';
+
   const gitCloneCommand = `git clone --depth 1 ${repoUrl} ${projectDirectory}`;
-  const deleteRemoteGitCommand = `cd ${projectDirectory} && rm -rf .git`;
-  const installCommand = `cd ${projectDirectory} && npm install`;
-  const createEnvCommand = `cd ${projectDirectory} && cp .env.sample .env`;
-  const deleteStarterIndexCommand = `cd ${projectDirectory} && rm index.starter.txt`;
-  const createExpressStarterCommand = `cd ${projectDirectory} && rm -rf src/*  && cp index.starter.txt src/index.ts && rm index.starter.txt`;
+  const deleteRemoteGitCommand = `cd ${projectDirectory} && ${deleteFolderPhrase} .git`;
+  const installCommand = `cd ${projectDirectory} && ${npmPhrase} install`;
+  const createEnvCommand = `cd ${projectDirectory} && ${copyPhrase} .env.sample .env`;
+  const deleteStarterIndexCommand = `cd ${projectDirectory} && ${deleteFilePhrase} index.starter.txt`;
+  const createExpressStarterCommand = windows ? `cd ${projectDirectory} && ${deleteFolderPhrase} src && md src && ${copyPhrase} index.starter.txt src\\index.ts && ${deleteFilePhrase} index.starter.txt`
+    : `cd ${projectDirectory} && ${deleteFolderPhrase} src/*  && ${copyPhrase} index.starter.txt src/index.ts && ${deleteFilePhrase} index.starter.txt`;
 
   runCommand(gitCloneCommand, '[1/5] Repo cloned successfully!');
   runCommand(deleteRemoteGitCommand, '[2/5] .git folder removed successfully!');
